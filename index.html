@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AnimeLab - Aprendiendo HTML, CSS y JavaScript</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">AnimeLab</h1>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Inicio</a></li>
+          <li><a href="#characters" class="nav-link">Personajes</a></li>
+          <li><a href="#gallery" class="nav-link">Galería</a></li>
+          <li><a href="#contact" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button id="themeBtn" class="theme-btn" title="Cambiar tema">🌙</button>
+      <!-- Control de música -->
+<div class="music-control">
+  <button id="musicBtn">🔈 Música</button>
+
+  <!-- Audio oculto (no reproduce solo) -->
+  <audio id="bgMusic" src="assets/Dragon Ball Z Original Soundtrack - Solid State Scouter [Lm77VCkf_do].opus"></audio>
+</div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ================== SECCIÓN HERO ================== -->
+    <section id="home" class="hero container">
+      <h2 class="title-heartbeat">Bienvenidos a AnimeLab</h2>
+      <p>Este sitio sirve para que los estudiantes evalúen la integración de <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.</p>
+      <div class="quick-actions">
+        <button id="showHint" class="btn">Ver pista (JS)</button>
+        <button onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})" class="btn">Ir a Galería</button>
+      </div>
+    </section>
+
+    <!-- ================== SECCIÓN PERSONAJES ================== -->
+    <section id="characters" class="container cards">
+      <h3>Personajes destacados</h3>
+      <div class="card-grid">
+        <article class="card">
+          <div class="avatar avatar-1" aria-hidden="true"></div>
+          <h4>Vegeta</h4>
+          <p>Príncipe Saiyajin orgulloso que lucha por superar sus límites y su propio ego.</p>
+          <button class="btn btn-outline" onclick="showProfile('Vegeta')">Ver Perfil</button>
+        </article>
+
+        <article class="card">
+          <div class="avatar avatar-2" aria-hidden="true"></div>
+          <h4>Faye</h4>
+          <p>Cazarrecompensas misteriosa y astuta que oculta su vulnerabilidad tras una actitud confiada.</p>
+          <button class="btn btn-outline" onclick="showProfile('Faye')">Ver Perfil</button>
+        </article>
+
+        <article class="card">
+          <div class="avatar avatar-3" aria-hidden="true"></div>
+          <h4>Pain</h4>
+          <p>Líder implacable que busca imponer la paz mediante el sufrimiento para romper el ciclo de odio.</p>
+          <button class="btn btn-outline" onclick="showProfile('Pain')">Ver Perfil</button>
+        </article>
+
+        <article class="card">
+          <div class="avatar avatar-4" aria-hidden="true"></div>
+          <h4>Thorfinn</h4>
+          <p>Guerrero islandés que crece rodeado de violencia durante la era vikinga.</p>
+          <button class="btn btn-outline" onclick="showProfile('Thorfinn')">Ver Perfil</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================== SECCIÓN GALERÍA ================== -->
+    <section id="gallery" class="container">
+      <h2>Galería</h2>
+      <p>Haz click en cualquier "tarjeta" para abrir una vista más grande.</p>
+      <div class="gallery-grid">
+        <figure class="thumb" onclick="openLightbox('assets/sacrificio.png')">
+          <img src="assets/sacrificio.png" alt="Ilustración 1" />
+          <figcaption>El orgullo de un guerrero… hasta el final</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/cowboy-bebop.jpg')">
+          <img src="assets/cowboy-bebop.jpg" alt="Ilustración 2" />
+          <figcaption>Persiguiendo estrellas en un mundo sin rumbo</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/seis-caminos.webp')">
+          <img src="assets/seis-caminos.webp" alt="Ilustración 3" />
+          <figcaption>Seis caminos del Pain</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/Vinland.webp')">
+          <img src="assets/Vinland.webp" alt="Ilustración 4" />
+          <figcaption>Entre el pasado y el futuro, ambos miran lo inevitable</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/picolo.jpg')">
+          <img src="assets/picolo.jpg" alt="Ilustración 5" />
+          <figcaption>Farming aura</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/julia.webp')">
+          <img src="assets/julia.webp" alt="Ilustración 4" />
+          <figcaption>Julia</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/bank.jpg')">
+          <img src="assets/bank.jpg" alt="Ilustración 4" />
+          <figcaption>See you, space cowboy</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/askeladd.avif')">
+          <img src="assets/askeladd.avif" alt="Ilustración 4" />
+          <figcaption>Stand still</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/vegeta-in-sea.jpg')">
+          <img src="assets/vegeta-in-sea.jpg" alt="Ilustración 4" />
+        <figcaption>El orgullo no flota</figcaption>
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/naruto.jpg')">
+          <img src="assets/naruto.jpg" alt="Ilustración 4" />
+        <figcaption>Modo sabio desbloqueado</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================== SECCIÓN CONTACTO ================== -->
+    <section id="contact" class="container">
+      <h2>Contacto</h2>
+      <form id="contactForm" class="form">
+        <label><h3>Nombre</h3>
+          <input type="text" name="name" id="name" required />
+          <small class="error-message"></small> <!-- Mensaje de error -->
+        </label>
+        <label><h3>Correo</h3>
+          <input type="email" name="email" id="email" required />
+          <small class="error-message"></small> <!-- Mensaje de error -->
+        </label>
+        <label><h3>Mensaje</h3>
+          <textarea name="message" id="message" rows="4" required>
+          </textarea>
+          <small class="error-message"></small> <!-- Mensaje de error -->
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Enviar</button>
+          <button type="reset" class="btn btn-outline">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ================== SECCIÓN NOTICIAS ================== -->
+    <section id="news" class="container news-section">
+      <h2 id="estreno">Próximos Estrenos</h2>
+      <div class="news-grid">
+        <!-- Noticia 1 -->
+        <article class="news-card">
+          <img src="assets/gaeta.webp" alt="Anime 1" class="news-img" />
+          <div class="news-body">
+            <h4>GAEA-TIMA the Gigantis: creador anuncia que el manga recibirá un anime</h4>
+            <p class="date">Fecha: 2025-03-10</p>
+            <p class="summary">Este domingo (16), el mangaka KENT anunció a través de X (Twitter) que su obra GAEA-TIMA the Gigantis tendrá proximamente una 
+              adaptación al anime, aunque sin ofrecer más detalles referente a su producción.</p>
+            <button class="btn btn-outline read-more"
+              data-title="GAEA-TIMA the Gigantis"
+              data-content="La trama sigue a una ciudad costera destruida por un monstruo colosal. Una década después del ataque, la comunidad reconstruida 
+              vuelve a prosperar como destino turístico, hasta que GAEA-TIMA resurge. Entre los sobrevivientes se encuentra Miyako, que se dedica a buscar respuestas científicas 
+              al surgimiento de los «gigantes», mientras que la historia cuestiona si la humanidad puede romper el ciclo de violencia.">
+              Leer más
+            </button>
+          </div>
+        </article>
+
+        <!-- Noticia 2 -->
+        <article class="news-card">
+          <img src="assets/irodori.webp" alt="Anime 2" class="news-img" />
+          <div class="news-body">
+            <h4>Irodori Comics SOL anuncia sus estrenos de noviembre</h4>
+            <p class="date">Fecha: 2025-05-22</p>
+            <p class="summary">Tras su lanzamiento en agoto, Irodori Comics SOL presentó recientemente sus proximos lanzamientos de doujinshis traducidos al español latino, lo cuales
+            se complementarán con De tortolitos con una gyaru dulce y los otakus por Sueyuu, ya disponible para su compra desde el 11 de noviembre.</p>
+            <button class="btn btn-outline read-more"
+              data-title="Irodori Comics SOL anuncia sus estrenos de noviembre"
+              data-content="Uno de estos nuevos lanzamientos es el primer capítulo de la serie Nada de vírgenes. La vez que un otaku raro como yo ayudó a las gyarus de la clase a perder la 
+              virginidad, creado Bidifus, marcando el inicio de la traducciones al español de este artista, cuyos títulos se irán localizando progresivamente.
+              El segundo nuevo lanzamiento, el cual estará disponible para su compra el próximo sábado 22 de noviembre, es nada más y nada menos que la serie ¡No se me p**a sin dos pares de 
+              t**as grandes, así que mi esposa trajo a su amiga! por Tachibana Omina, la cual marca su regreso al catálogo de Irodori Comics SOL tras haber participado en la 
+              exploraración inicial de esta propuesta de doujinshis localizados al español latino en 2021. ">
+              Leer más
+            </button>
+          </div>
+        </article>
+
+        <!-- Noticia 3 -->
+        <article class="news-card">
+          <img src="assets/demon.webp" alt="Anime 3" class="news-img" />
+          <div class="news-body">
+            <h4>Demon Slayer: El castillo infinito bate récords en su estreno en China</h4>
+            <p class="date">Fecha: 2025-07-01</p>
+            <p class="summary">Como era de esperar, el estreno de Demon Slayer: Castillo infinito en China logró alcanzar una fuerte recaudación en las taquillas del país, impulsando sus cifras 
+              totales y consolidando el largometraje como uno de los mayores éxitos del año, según BoxOffice.</p>
+            <button class="btn btn-outline read-more"
+              data-title="Demon Slayer"
+              data-content="Según datos previos, la producción ha recaudado 52,7 millones de dólares en sus primeros tres días, convirtiéndose en el mayor estreno del año en China para una película 
+              extranjera y el mayor estreno japonés en el país de todos los tiempos, considerando un estreno de tres días.
+
+              Con su llegada al país asiático, Castillo Infinito ya suma 740,4 millones de dólares en todo el mundo, con expectativas de alcanzar los 800 millones de dólares en las próximas semanas. El costo de producción fue de 20 millones de dólares.">
+              Leer más
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+    <!-- ================== FOOTER ================== -->
+
+<footer class="site-footer container">
+  <p class="footer-container">AnimeLab • Proyecto educativo — HTML • CSS • JavaScript</p>
+  <p class="small" >
+    &copy; <span id="currentYear"></span class="footer-container"> AnimeLab
+  </p>
+
+  <!-- Redes sociales -->
+  <div class="social-icons">
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+      <img src="assets/instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://youtube.com" target="_blank" aria-label="YouTube" id="youtube">
+      <img src="assets/youtube.png" alt="YouTube" />
+    </a>
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <img src="assets/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://twitter.com" target="_blank" aria-label="X">
+      <img src="assets/x.png" alt="X / Twitter" />
+    </a>
+  </div>
+
+  <!-- BOTÓN PARA MOSTRAR ACERCA DE -->
+<div class="about-wrapper">
+  <button id="aboutBtn" class="about-btn">📄 Acerca de AnimeLab</button>
+</div>
+
+<!-- SECCIÓN OCULTA -->
+<section id="aboutSection" class="about-section">
+  <div class="about-content">
+    <h2>Acerca de AnimeLab</h2>
+    <p>
+      <strong>AnimeLab es un proyecto educativo desarrollado para practicar HTML, CSS y JavaScript mediante
+      ejemplos visuales inspirados en el anime.</strong>
+    </p>
+
+    <h3>Créditos del Proyecto</h3>
+    <ul>
+      <li><strong>Desarrollador: May Can Luis Omar</strong></li>
+      <li><strong>Grupo: — TTD-4A</strong></li>
+      <li><strong>Asignatura:< Desarrollo Web</strong></li>
+      <li><strong>Institución: — Universidad Tecnológica del Centro</strong></li>
+    </ul>
+
+    <p>
+      <strong> el sitio fue creado para enseñar conceptos esenciales como diseño responsivo, interacción DOM,
+      animaciones CSS y buenas prácticas para principiantes.</strong>
+    </p>
+
+    <div class="about-links">
+      <a href="#" target="_blank">🌐 Portafolio</a>
+      <a href="#" target="_blank">📸 Instagram</a>
+      <a href="#" target="_blank">🐙 GitHub</a>
+    </div>
+  </div>
+</section>
+
+</footer>
+
+
+  <!-- ================== LIGHTBOX ================== -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <img id="lightboxImg" alt="Vista ampliada" />
+  </div>
+
+  <!-- ================== MODAL NOTICIAS ================== -->
+  <div id="newsModal" class="news-modal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeNewsModal">✖</button>
+      <h2 id="modalTitle"></h2>
+      <p id="modalContent"></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
